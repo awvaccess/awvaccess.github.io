@@ -1,0 +1,552 @@
+@font-face {
+  font-family: Minimal;
+  src: url(./fonts/minimal.otf);
+}
+@font-face {
+  font-family: Existence;
+  src: url(./fonts/existence/Existence-Light.ttf);
+}
+@font-face {
+  font-family: BebasNeue;
+  src: url(./fonts/bebas_neue/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: Generica;
+  src: url(./fonts/generica/Generica.otf);
+}
+@font-face {
+  font-family: Monserrat;
+  src: url(./fonts/MontserratAlternates-Regular.otf);
+}
+
+* {
+  font-family: Generica;  
+  letter-spacing: .1rem;
+  font-size: 1vw;
+}
+
+.App, .App-about, .App-session, .App-contact{
+  background: rgba(34,34,34,1);
+  background: -moz-linear-gradient(top, rgba(34,34,34,1) 0%, rgba(34,34,34,1) 41%, rgba(25,58,92,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(34,34,34,1)), color-stop(41%, rgba(34,34,34,1)), color-stop(100%, rgba(25,58,92,1)));
+  background: -webkit-linear-gradient(top, rgba(34,34,34,1) 0%, rgba(34,34,34,1) 41%, rgba(25,58,92,1) 100%);
+  background: -o-linear-gradient(top, rgba(34,34,34,1) 0%, rgba(34,34,34,1) 41%, rgba(25,58,92,1) 100%);
+  background: -ms-linear-gradient(top, rgba(34,34,34,1) 0%, rgba(34,34,34,1) 41%, rgba(25,58,92,1) 100%);
+  background: linear-gradient(to bottom, rgba(34,34,34,1) 0%, rgba(34,34,34,1) 41%, rgba(25,58,92,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#193a5c', GradientType=0 );
+}
+
+.App-logo {
+  height: 80px;
+  margin-top: 1rem;
+}
+
+.App-header{
+  background: #6c7663 url(./img/header-bg.jpg) 55px bottom no-repeat;
+  background-size: 130% 200%;
+  background-position-x: 0;
+  background-position-y: -7rem;
+  overflow: hidden;
+}
+
+.App-upperheader {
+  background-color: #222;
+  height: 13vh;
+  vertical-align: middle;
+  color: #fff;
+  display: flex;
+  align-content: row;
+  justify-content: space-around;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.App-upperheader:hover{
+  opacity: 0.9;
+}
+
+.App-upperheader-menu{
+  vertical-align: middle;
+  position: relative;
+  border: 1px solid #333;
+  border-radius: 0px 0 50px 50px;
+  padding-top: 5vh;
+  border-style: none;
+  background-color: #193a5c;
+  width: 24rem;
+  display: flex;
+  justify-content: space-around;
+  height: 9vh;
+}
+
+.App-upperheader-menu a{
+  transition: 0.3s;
+}
+
+.App-upperheader-menu a:hover{
+  font-weight: bolder;
+  font-size: 1.4vw;
+}
+
+.App-subheader{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  bottom: 0;
+  text-align: center;
+  padding: 0 4rem;
+  color: #fff;  
+}
+
+.App-subheader-message{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.App-header nav a{
+  text-decoration: none;  
+  color: #fff;
+  margin: 0 1rem;
+  font-size: .75rem;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-bar {
+  text-align: center;  
+}
+
+.App-bar input{
+  width: 50vw;
+  height: 5vh;
+  background-color: rgba(129, 130, 133, 0.582);
+  color: #fff;
+  font-weight: bold;
+  border: 3px solid #193a5c;
+  border-right: none;
+  padding-left: .4rem;
+  font-size: 1rem;
+  border-radius: 20px 0 0 20px;
+  text-align: center;
+}
+
+.App-logo {
+  height: 8vh;
+  position: relative;
+  float: left;
+}
+
+.App-submit{
+  background-color: #193a5c;
+  border: none;
+  color:#fff;
+  font-weight: bolder;
+  width: auto;
+  height: auto;
+  text-transform: uppercase;
+  height: 6vh;
+  border-radius: 0 20px 20px 0;
+  font-family: Generica;
+}
+
+.App-welcome{  
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.App-imgWrapper{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+  color: #4d4d4d;
+  background-color: #dcdfe0;
+  border-radius: 3vh; 
+  margin-top: 2rem;
+}
+
+.App-img{
+  height: 10rem;
+  width: 10rem;
+  margin: 1rem;
+  position: relative;
+  border: 4px solid #fff;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.App-img img{
+  height: 10rem;
+  width: auto;
+  opacity: .2;
+}
+
+.App-img span{
+  position: relative;
+  float: left;
+  top: -10.7rem;
+  background: rgba(129, 130, 133, 0.336);
+  height: 100%;
+  width: 100%;
+  color: rgb(37, 52, 91);
+  vertical-align: middle;
+  padding-top: 4rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+
+.App-img img:hover + span {
+  color: red;
+  
+}
+
+.App-link{
+  text-decoration: none;
+  color: #193a5c;
+}
+
+.App-results{
+  width: 100%;
+}
+
+.App-text *{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App-title{
+  text-align: center;
+  color: #193a5c;
+  font-size: 2.5vw;
+}
+
+.App-subtitle{
+  font-size: 2vw;
+}
+
+.App-link{
+  margin-top: 1rem;
+  color: rgb(49, 94, 216);   
+}
+
+.App-contact, .App-session{
+  min-height: 65vh;
+  position: relative;
+  justify-content: center;
+  padding: 5vh;
+}
+
+.App-about, .App-welcome{
+  padding: 4vh 8vh;
+}
+
+.App-session{
+  display: flex;
+  justify-content: space-around;
+}
+
+.App-form , .App-login , .App-sign, .App-text{
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 4vh 10vh;
+  color: #4d4d4d;
+  background-color: #dcdfe0;
+  border-radius: 20px;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;  
+}
+
+.App-form{
+  margin: auto 0;
+}
+
+.App-login input, .App-sign input, .App-contact input, textarea{
+  margin: 1vh;
+  height: 4vh;
+  font-size: 3vh;
+  padding: .2vh;
+  border: none;
+  border-bottom: 1px solid #193a5c;
+}
+
+input[type=submit]{
+  background-color: #aaabac;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+
+}
+
+textarea{
+  height: 2rem;
+}
+
+.App-tabs li {
+  list-style-type: none;
+  color: #1f466d;
+  padding: .3vw;
+  font-weight: bolder;
+  font-size: 2vw;
+  text-transform: uppercase;
+  
+}
+.react-tabs__tab{
+  transition: 0.2s;
+  margin: .3rem;
+  border-radius: 50px;  
+}
+
+.react-tabs__tab:hover{
+  background-color: #b5b9bb98;
+  
+}
+
+.react-tabs__tab--selected{
+  background-color: #193a5c;
+  color: #fff !important;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.lds-spinner {
+  position: relative;
+}
+.lds-spinner div {
+  left: 94px;
+  top: 48px;
+  position: absolute;
+  -webkit-animation: lds-spinner linear 1s infinite;
+  animation: lds-spinner linear 1s infinite;
+  background: #ccccc7;
+  width: 12px;
+  height: 24px;
+  border-radius: 40%;
+  -webkit-transform-origin: 6px 52px;
+  transform-origin: 6px 52px;
+}
+.lds-spinner div:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-animation-delay: -0.916666666666667s;
+  animation-delay: -0.916666666666667s;
+}
+.lds-spinner div:nth-child(2) {
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -webkit-animation-delay: -0.833333333333333s;
+  animation-delay: -0.833333333333333s;
+}
+.lds-spinner div:nth-child(3) {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+  -webkit-animation-delay: -0.75s;
+  animation-delay: -0.75s;
+}
+.lds-spinner div:nth-child(4) {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-animation-delay: -0.666666666666667s;
+  animation-delay: -0.666666666666667s;
+}
+.lds-spinner div:nth-child(5) {
+  -webkit-transform: rotate(120deg);
+  transform: rotate(120deg);
+  -webkit-animation-delay: -0.583333333333333s;
+  animation-delay: -0.583333333333333s;
+}
+.lds-spinner div:nth-child(6) {
+  -webkit-transform: rotate(150deg);
+  transform: rotate(150deg);
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(7) {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-animation-delay: -0.416666666666667s;
+  animation-delay: -0.416666666666667s;
+}
+.lds-spinner div:nth-child(8) {
+  -webkit-transform: rotate(210deg);
+  transform: rotate(210deg);
+  -webkit-animation-delay: -0.333333333333333s;
+  animation-delay: -0.333333333333333s;
+}
+.lds-spinner div:nth-child(9) {
+  -webkit-transform: rotate(240deg);
+  transform: rotate(240deg);
+  -webkit-animation-delay: -0.25s;
+  animation-delay: -0.25s;
+}
+.lds-spinner div:nth-child(10) {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  -webkit-animation-delay: -0.166666666666667s;
+  animation-delay: -0.166666666666667s;
+}
+.lds-spinner div:nth-child(11) {
+  -webkit-transform: rotate(300deg);
+  transform: rotate(300deg);
+  -webkit-animation-delay: -0.083333333333333s;
+  animation-delay: -0.083333333333333s;
+}
+.lds-spinner div:nth-child(12) {
+  -webkit-transform: rotate(330deg);
+  transform: rotate(330deg);
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.lds-spinner {
+  width: 200px !important;
+  height: 200px !important;
+  -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+
+
+table.calendar {
+  border-collapse: collapse;
+}
+
+table.calendar thead {
+  background-color: #5A5A5A;
+  color: white;
+  margin-bottom: 3px;
+  border-bottom: 2px solid white
+}
+
+div#calendar {
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid #5A5A5A;
+  background-color: white;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+div.calendar-controls {
+  margin: 5px auto;
+  display: table;
+  font-size: 25px;
+  line-height: 35px;
+}
+
+div.calendar-controls div {
+  display: inline;
+}
+
+div.calendar-controls .current-year {
+  margin: 0 30px;
+}
+
+div.calendar-controls .control {
+  font-weight: bolder;
+  color: #323232;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+table.calendar thead th {
+  font-weight: normal;
+  padding: 10px 3px;
+}
+
+table.calendar thead th.bolder {
+  font-weight: bold;
+}
+
+table.calendar tbody {
+  font-size: 0.8em;
+}
+
+table.calendar td {
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(185, 185, 185, 0.13);
+  background-color: white;
+  min-width: 15px;
+}
+
+table.calendar tr:last-child td {
+  border-bottom: none;
+}
+
+table.calendar td.month-name {
+  font-weight: bold;
+  text-align: left;
+  cursor: default;
+  border-left: none;
+}
+
+table.calendar td.prev-month,
+table.calendar td.next-month {
+  color: transparent;
+  cursor: default;
+  pointer-events: none;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAAXNSR0IArs4c6QAAABZJREFUCB1jYEADmzdv/o8iRA0BoIEAKngPeSAlnXcAAAAASUVORK5CYII=');
+}
+
+table.calendar td.week-separator {
+  pointer-events: none;
+  padding: 0;
+  width: 8px;
+  min-width: 0;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAAXNSR0IArs4c6QAAABZJREFUCB1jYEADmzdv/o8iRA0BoIEAKngPeSAlnXcAAAAASUVORK5CYII=');
+}
+
+table.calendar td.bolder {
+  font-weight: bold;
+}
+
+/* Single selected day */
+table.calendar td.selected {
+  background-color: orangered;
+  font-weight: bold;
+}
+
+/* Selected range */
+table.calendar td.range {
+  background-color: rgba(255,69,0, 0.7);
+  font-weight: bold;
+  color: white;
+}
+
+table.calendar td.range-left {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  overflow: hidden;
+  background: orangered;
+}
+
+table.calendar td.range-right {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  background: orangered;
+}
+table.calendar td.holidays {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: underline;
+  background-color: #003366;
+}
