@@ -255,7 +255,6 @@
   padding: 4vh 10vh;
   color: #4d4d4d;
   background-color: #dcdfe0;
-  border-radius: 20px;
   font-family: 'Open Sans', sans-serif;
   position: relative;  
 }
@@ -549,4 +548,17 @@ table.calendar td.holidays {
   color: #fff;
   text-decoration: underline;
   background-color: #003366;
+}
+.App-html{
+  background-color: #fff;
+}
+.round-borders{
+  border-radius: 20px;
+}
+.App-list{
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #5A5A5A;
+  margin: 1vh 0;
+  padding: 1vh;
 }

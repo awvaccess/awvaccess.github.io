@@ -58,11 +58,6 @@ class Header extends React.Component {
 						>
 							Contacto
 						</Link>
-						<Link
-							to={'/login'}					
-						>
-							Iniciar sesión
-						</Link>
 					</nav>
 				</div>
 				<Motion style={{x: spring(header ? 87 : 12)}}>

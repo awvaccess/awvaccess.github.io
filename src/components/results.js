@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import renderHTML from 'react-render-html';
 import {Calendar, CalendarControls} from 'react-yearly-calendar';
 import moment from 'moment';
 
@@ -12,9 +11,10 @@ class Results extends React.Component {
 
     const today = moment();
       this.state = {
-      year: today.year(),
+      year: 0,
       selectedDay: today,
-      firstDayOfWeek: 0
+      firstDayOfWeek: 0,
+      customCSSclasses: {},
     };
   }
   onPrevYear() {
@@ -43,14 +43,23 @@ class Results extends React.Component {
   }
 
   componentWillMount(){
-    let newList=[];
-    this.props.content.list.forEach( (version, index) => 
-      newList.push(version.substring(0, 10)) 
-    )
-    const customCSSclasses = {
-      holidays: newList
+    const { content } = this.props;
+    let latestYear = 0;
+    if(content.type === 'url'){
+      for(let i = 0; i < content.list.length; i++){
+        if (latestYear < parseInt(content.list[i].substring(0, 4), 10)){
+          latestYear = parseInt(content.list[i].substring(0, 4), 10);
+        }
+      }
+      const customCSSclasses = {
+        holidays: content.list
+      }
+      this.setState({
+        customCSSclasses,
+        year: latestYear
+      });
     }
-    this.setState({ customCSSclasses });
+    
   }
   
   render() {
@@ -61,16 +70,29 @@ class Results extends React.Component {
       customCSSclasses
     } = this.state;
     const {
-      content,
-      html,
+      content
     } = this.props;
     return (
       <div className='App-results'>
         <div className='App-text'>
-          <h1>Búsqueda: <b>{content.url}</b></h1>
+          <h1>Búsqueda: <b>{content.type === 'url' ? content.url : content.keywords }</b></h1>
           <h4>Resultados: {content.versions}</h4>
           { content.type === 'url' ?
             <div className='App-url-results'>
+              <div className='App-list'>
+                {content.list.map( (version, index) =>
+                <li
+                  className='App-link'
+                  key={index}
+                  onClick={() =>
+                      this.props.site({ 'site_version': content.warcList[index] + '/' + content.urlsList[index] })
+                  }
+                >
+                  {version} | 
+                  {' ' +content.urlsList[index]}
+                </li>
+                )}
+              </div>
               <div id="calendar">
                 <CalendarControls
                   year={year}
@@ -81,7 +103,6 @@ class Results extends React.Component {
                 <Calendar
                   year={year}
                   selectedDay={selectedDay}
-                  showWeekSeparators={false}
                   firstDayOfWeek={firstDayOfWeek}
                   onPickDate={date => this.datePicked(date)}
                   customClasses={customCSSclasses}
@@ -89,7 +110,7 @@ class Results extends React.Component {
               </div>
             </div>
           :
-            <div className='App-keyword-results'>
+            <div className='App-keyword-results App-list'>
               {content.list.map( (version, index) =>
               <li
                 className='App-link'
@@ -103,9 +124,6 @@ class Results extends React.Component {
               )}
             </div>
           }
-          <div className='app'>
-            {renderHTML(html)}
-          </div>
         </div>
       </div>
     )
@@ -114,7 +132,6 @@ class Results extends React.Component {
 
 const mS = state => {
   return {
-    html: state.results.html,
     content: state.results.content,
     showExternalHTML: state.results.showExternalHTML
   };

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 //import logo from '../logo.svg';
 import '../App.css';
 import Results from '../components/results';
+import HtmlRenderizer from '../components/htmlRenderizer';
 import Welcome from '../components/welcome';
 
 class MainContainer extends React.Component {
@@ -22,7 +23,11 @@ class MainContainer extends React.Component {
           welcome ?
             <Welcome />
           :
+            <div>
             <Results /> 
+            <hr/>
+            <HtmlRenderizer /> 
+            </div>
         }
       </div>
     );

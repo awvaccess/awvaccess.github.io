@@ -7,7 +7,7 @@ import '../App.css';
 
 class SearchBar extends React.Component {
   handleKeyPress = (event) => {
-    if(event.key == 'Enter'){
+    if(event.key === 'Enter'){
       this.props.submitjson({ 'query': this.refs.query.value });
       update({
         query: this.refs.query.value,
@@ -24,9 +24,6 @@ class SearchBar extends React.Component {
     });
   }
   render() {
-    const {
-      update,
-    } = this.props;
     return (
       <div className="App-bar"
       >

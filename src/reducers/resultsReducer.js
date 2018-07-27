@@ -66,7 +66,6 @@ export const site = (query) => {
   return dispatch => {
     sitereq(JSON.stringify(query)).then(
       response => {
-        console.log(response);
         dispatch(
           update({
             html: response.data,

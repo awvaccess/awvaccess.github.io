@@ -33,7 +33,7 @@ class contentContainer extends React.Component {
           </TabList>
 
           <TabPanel>
-          <div className='App-text'>
+          <div className='App-text round-borders'>
               <h1
                 className='App-title'
               >
@@ -51,7 +51,7 @@ class contentContainer extends React.Component {
               >
                 Motivación
               </h3>            
-              <p>Este módulo es el Trabajo Especial de Grado del Br. Luis Daniel Cartillo y el Archivo Web es a su vez la tesis doctoral de Mercy Ospina</p>
+              <p>Este módulo es el Trabajo Especial de Grado del Br. Luis Daniel Cartillo y el Archivo Web es a su vez la tesis doctoral de la Msc. Mercy Ospina</p>
             </div>
           </TabPanel>
           <TabPanel>
